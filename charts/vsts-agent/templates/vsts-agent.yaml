@@ -82,3 +82,6 @@ spec:
       resources:
         requests:
           storage: {{ .Values.resources.disk | default "50Gi" | quote }}
+{{ if .Values.extraVolumeClaimTemplates }}
+{{ toYaml .Values.extraVolumeClaimTemplates | indent 2 }}
+{{ end }}
