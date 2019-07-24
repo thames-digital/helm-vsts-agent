@@ -67,6 +67,8 @@ spec:
 {{ if .Values.extraContainers }}
 {{ toYaml .Values.extraContainers | indent 6 }}
 {{ end }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
       volumes:
 {{ toYaml .Values.volumes | indent 8 }}
 {{ if .Values.image.imagePullSecret }}
