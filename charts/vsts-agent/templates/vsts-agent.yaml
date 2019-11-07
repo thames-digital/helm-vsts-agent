@@ -34,7 +34,7 @@ spec:
                 key: vstsToken
          {{- with .Values }}
           - name: VSTS_ACCOUNT
-            value: {{ .vstsAccount | default "" }}
+            value: {{ .vstsAccount }}
           - name: VSTS_POOL
             value: {{ .vstsPool | default "kubernetes-vsts-agents" }}
           - name: VSTS_AGENT
@@ -42,13 +42,13 @@ spec:
           - name: VSTS_WORK
             value: {{ .vstsWorkspace | default "/workspace" }}
           - name: AZP_URL
-            value: {{ .azurePipelinesURL | default "" }}
+            value: {{ .azurePipelinesURL }}
           - name: AZP_POOL
             value: {{ .vstsPool | default "kubernetes-vsts-agents" }}
           - name: AZP_AGENT_NAME
-            value: {{ .vstsAgentName | default "$HOSTNAME" }}
+            value: {{ .vstsAgentName }}
           - name: AZP_AGENT_PREFIX
-            value: {{ .vstsAgentPrefix | default "" }}
+            value: {{ .vstsAgentPrefix }}
          {{- end }}
          {{- range $key, $value := .Values.extraEnv }}
           - name: {{ $key }}
