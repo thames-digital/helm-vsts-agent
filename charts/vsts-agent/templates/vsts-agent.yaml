@@ -27,15 +27,24 @@ spec:
               secretKeyRef:
                 name: vsts-agent-secret
                 key: vstsToken
+          - name: AZP_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: vsts-agent-secret
+                key: vstsToken
          {{- with .Values }}
           - name: VSTS_ACCOUNT
-            value: {{ .vstsAccount }}
+            value: {{ .vstsAccount | default "" }}
           - name: VSTS_POOL
             value: {{ .vstsPool | default "kubernetes-vsts-agents" }}
           - name: VSTS_AGENT
             value: {{ .vstsAgentName | default "$HOSTNAME" }}
           - name: VSTS_WORK
             value: {{ .vstsWorkspace | default "/workspace" }}
+          - name: AZP_URL
+            value: {{ .azurePipelinesURL | default "" }}
+          - name: AZP_AGENT_NAME
+            value: {{ .vstsAgentName | default "$HOSTNAME" }}
          {{- end }}
          {{- range $key, $value := .Values.extraEnv }}
           - name: {{ $key }}
