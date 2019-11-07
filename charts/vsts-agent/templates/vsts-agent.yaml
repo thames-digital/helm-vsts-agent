@@ -47,6 +47,8 @@ spec:
             value: {{ .vstsPool | default "kubernetes-vsts-agents" }}
           - name: AZP_AGENT_NAME
             value: {{ .vstsAgentName | default "$HOSTNAME" }}
+          - name: AZP_AGENT_PREFIX
+            value: {{ .vstsAgentPrefix | default "" }}
          {{- end }}
          {{- range $key, $value := .Values.extraEnv }}
           - name: {{ $key }}

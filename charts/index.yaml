@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   vsts-agent:
   - apiVersion: v1
-    created: "2019-11-07T15:57:25.219143Z"
+    created: "2019-11-07T16:17:32.020801Z"
     description: Helm chart for Visual Studio Team Services agent pool
-    digest: c4e8eb6187399525a70b35ddaedfc7232e895a63932d46d2bb54a74631637e2b
+    digest: 905312a0ac56b88ba0bd8f9326bd00a540e8d35d0d9b7da30b65f116d7c279ea
     maintainers:
     - email: msefoundations@microsoft.com
       name: Microsoft Social Engagement
@@ -13,7 +13,7 @@ entries:
     - vsts-agent-1.0.2.tgz
     version: 1.0.2
   - apiVersion: v1
-    created: "2019-11-07T15:57:25.218937Z"
+    created: "2019-11-07T16:17:32.020398Z"
     description: Helm chart for Visual Studio Team Services agent pool
     digest: 1baf8d71ae27594b0d0bf8403531b9cd3502fb901761de96c201d9ead1d834d2
     maintainers:
@@ -24,7 +24,7 @@ entries:
     - vsts-agent-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v1
-    created: "2019-11-07T15:57:25.218525Z"
+    created: "2019-11-07T16:17:32.019715Z"
     description: Helm chart for Visual Studio Team Services agent pool
     digest: c13c24fad551693836f3f36188917230b861eb4ca10f4ba8aee38cf68d55151f
     maintainers:
@@ -34,4 +34,4 @@ entries:
     urls:
     - vsts-agent-1.0.0.tgz
     version: 1.0.0
-generated: "2019-11-07T15:57:25.217542Z"
+generated: "2019-11-07T16:17:32.013216Z"
