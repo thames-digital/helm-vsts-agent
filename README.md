@@ -31,8 +31,10 @@ The following tables lists the configurable parameters of the `vsts-agent` chart
 | `vstsWorkspace`                   | VSTS agent workspace                  | `/workspace`                                              |
 | `extraEnv`                   | Extra environment variables on the vsts-agent container                  | `nil`                                              |
 | `cleanRun`                   | Kill and restart vsts-agent container on completion of a build (completely resets the environment)                  | `false`                                              |
+| `nodeSelector`                   | Map of node selector key/value pairs (add `beta.kubernetes.io/os: linux` in a mixed OS Kubernetes cluster)                  | `nil`                                              |
 | `volumes`                   | An array of custom volumes to attach to the vsts-agent pod                  | `docker-socket` to mount /var/run/docker.sock (if you still need this volume when defining addition ones, please ensure you reference it again in your list)                                             |
 | `volumeMounts`                   | volumeMounts to the vsts-agent container as referenced in `volumes`                  | A read-only `docker-socket` to mount as /var/run/docker.sock in vsts-agent container (as in `volumes` please reference this again if you still need it in your custom list)                                               |
+| `extraVolumeClaimTemplates`                   | Array of additional VolumeClaimTemplates to use in your volume mounts                  | `nil`                                              |
 | `extraContainers`                   | Array of additional sidecar containers to add into the vsts-agent pod                  | `nil`                                              |
 
 ## Configure your VSTS instance
@@ -56,7 +58,7 @@ helm install --namespace <NAMESPACE> --set vstsToken=${VSTS_TOKEN} --set vstsAcc
 Your deployment should look like this if everything works fine:
 
 ```bash
-kubectl get pods --namespace <NAMESPACE> 
+kubectl get pods --namespace <NAMESPACE>
 NAME           READY     STATUS    RESTARTS   AGE
 vsts-agent-0   1/1       Running   0          1m
 vsts-agent-1   1/1       Running   0          1m
